@@ -20,15 +20,25 @@ void Insert (int value, int position, List * list) {
 	if (list->head == NULL) {
 		list->head = CreateNode(value);
 	} else {
+		current = list->head;
+		
 		if (position == -1) {
-			current = list->head;
 
-			if (current->next != NULL) {
+			while (current->next != NULL) {
 				current = current->next;
 			}
 
 			current->next = CreateNode(value);
 		} else {
+
+			Node * temp = CreateNode(value);
+
+			for (int i = 0; i < position-2; i++) {
+				current = current->next;
+			}
+
+			temp->next = current->next;
+			current->next = temp;
 
 		}
 	}
