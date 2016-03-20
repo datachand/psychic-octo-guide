@@ -1,6 +1,7 @@
 #ifndef _SINGLYLINKEDLIST_INTEGER_H
 #define _SINGLYLINKEDLIST_INTEGER_H
 
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Node {
@@ -16,7 +17,7 @@ Node * CreateNode (int value);
 
 List * EmptyList ();
 
-void Insert (int value, List * list);
+void Insert (int value, int position, List * list);
 
 void Delete (int value, List * list);
 
