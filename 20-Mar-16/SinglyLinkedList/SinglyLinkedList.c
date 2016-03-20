@@ -53,16 +53,23 @@ void Delete (int position, List * list) {
 	if (list->head == NULL) {
 		return;
 	} else {
-
 		current = list->head;
 
-		for (int i = 0; i < position-2; i++) {
-			current = current->next;
-		}
+		if (position == 1) {
+			Node *temp = current->next;
+			current->data = temp->data;
+			current->next = temp->next;
+			free(temp);
+		} else {
 
-		Node *temp = current->next;
-		current->next = temp->next;
-		free(temp);
+			for (int i = 0; i < position-2; i++) {
+				current = current->next;
+			}
+
+			Node *temp = current->next;
+			current->next = temp->next;
+			free(temp);
+		}
 
 	}
 

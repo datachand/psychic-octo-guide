@@ -21,5 +21,9 @@ int main(int argc, char const *argv[])
 	Delete(5, newList);
 	DisplayList(newList);
 
+
+	Delete(1, newList);
+	DisplayList(newList);
+
 	return 0;
 }
