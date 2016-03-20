@@ -19,7 +19,7 @@ List * EmptyList ();
 
 void Insert (int value, int position, List * list);
 
-void Delete (int value, List * list);
+void Delete (int position, List * list);
 
 void DisplayList (List * list);
 

@@ -15,6 +15,7 @@ List * EmptyList () {
 }
 
 void Insert (int value, int position, List * list) {
+
 	Node * current = NULL;
 
 	if (list->head == NULL) {
@@ -45,7 +46,30 @@ void Insert (int value, int position, List * list) {
 
 }
 
+void Delete (int position, List * list) {
+
+	Node * current = NULL;
+
+	if (list->head == NULL) {
+		return;
+	} else {
+
+		current = list->head;
+
+		for (int i = 0; i < position-2; i++) {
+			current = current->next;
+		}
+
+		Node *temp = current->next;
+		current->next = temp->next;
+		free(temp);
+
+	}
+
+}
+
 void DisplayList (List * list) {
+
 	Node * current = NULL;
 
 	if(list->head == NULL) {
@@ -60,4 +84,5 @@ void DisplayList (List * list) {
 
 		printf("%d\n", current->data);
 	}
+
 }
