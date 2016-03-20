@@ -1,11 +1,11 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef _LINKEDLIST_H_
+#define _LINKEDLIST_H_
 
-struct Node {
+typedef struct Node {
 	int data;
-	struct Node* next;	
-};
+	struct Node * next;	
+} List;
 
-struct Node* head;
+struct Node * head;
 
 #endif
