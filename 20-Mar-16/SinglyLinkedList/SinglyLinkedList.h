@@ -23,4 +23,14 @@ void Delete (int position, List * list);
 
 void DisplayList (List * list);
 
+int Count (List * list);
+
+void Reverse (List * list);
+
+void RecursionPrintForward (Node * node);
+
+void RecursionPrintBackward (Node * node);
+
+void RecursionReverse (List * list, Node * node);
+
 #endif

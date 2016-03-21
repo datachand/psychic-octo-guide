@@ -93,3 +93,80 @@ void DisplayList (List * list) {
 	}
 
 }
+
+int Count (List * list) {
+
+	Node * current = NULL;
+	int count = 0;
+
+	if (list->head == NULL) {
+		count = 0;
+	} else {
+		current = list->head;
+
+		while (current->next != NULL) {
+			count++;
+			current = current->next;
+		}
+
+		count = count + 1;
+	}
+
+	return count;
+
+}
+
+void Reverse (List * list) {
+
+	Node * current, * previous, * next;
+	current = list->head;
+	previous = NULL;
+
+	while (current != NULL) {
+
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+
+	}
+
+	list->head = previous;
+}
+
+void RecursionPrintForward (Node * node) {
+
+	if (node == NULL) {
+		printf("\n");
+		return;
+	}
+	printf("%d\t", node->data);
+	RecursionPrintForward(node->next);
+
+}
+
+void RecursionPrintBackward (Node * node) {
+	
+	if (node == NULL) {
+		return;
+	}
+
+	RecursionPrintBackward(node->next);
+	printf("%d\t", node->data);
+
+}
+
+void RecursionReverse (List * list, Node * node) {
+
+	if (node->next == NULL) {
+		list->head = node;
+		return;
+	}
+
+	RecursionReverse(list, node->next);
+
+	Node * temp = node->next;
+	temp->next = node;
+	node->next = NULL;
+
+}
