@@ -17,5 +17,9 @@ int main(int argc, char const *argv[])
 
 	Insert(75, 3, newList);
 	DisplayList(newList);
+
+	Remove(5, newList);
+	DisplayList(newList);
+
 	return 0;
 }

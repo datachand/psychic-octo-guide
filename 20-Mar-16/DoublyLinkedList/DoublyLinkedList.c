@@ -54,6 +54,26 @@ void Insert (int value, int position, List * list) {
 	}
 }
 
+void Remove (int position, List * list) {
+	Node * current = NULL;
+
+	if (list->head == NULL) {
+		return;
+	} else {
+		current = list->head;
+
+		for (int i = 0; i < position-2; i++) {
+			current = current->next;
+		}
+
+		Node * temp = current->next;
+		current->next = temp->next;
+		current->prev = temp->prev;
+		free(temp);
+
+	}
+}
+
 void DisplayList (List * list) {
 	Node * current = NULL;
 
