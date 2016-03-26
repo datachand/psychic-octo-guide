@@ -11,4 +11,8 @@ int BinarySearch(int * array, int size, int value);
 
 int RecursiveBinarySearch (int * array, int value, int start, int end);
 
+int FirstOccurence(int * array, int size, int value);
+
+int LastOccurence(int * array, int size, int value);
+
 #endif
