@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 	long long int * number_array;
 	number_array = (long long int *) malloc (number * sizeof(long long int));
 
-	for (int i = 0; i < number_array; i++) {
+	for (int i = 0; i < number; i++) {
 		scanf("%lld", &number_array[i]);
 	}
 
